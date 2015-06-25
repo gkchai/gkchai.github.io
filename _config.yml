@@ -1,1 +1,31 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               The Three R's
+url:                 http://gkchai.github.io
+paginate:            1
+baseurl:             ""
+twitter_username:   g_k_chai
+github_username:    gkchai
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Krishna C Garikipati
+  # url:               https://eecs.umich.edu/~gkchai
+  # email:             kcgarikipati@gmail.com
+
+pages_list:
+  About: '/about'
+
 port: 3000
