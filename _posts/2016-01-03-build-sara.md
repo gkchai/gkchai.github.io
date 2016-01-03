@@ -6,9 +6,6 @@ brief:  The basics of building an artificial intelligent agent that schedules ca
 over email.
 ---
 
-
------
-
 Introduction to AI agents in our daily life.
 
 ##Architecture
