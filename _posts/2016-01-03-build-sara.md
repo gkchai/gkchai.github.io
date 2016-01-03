@@ -11,12 +11,12 @@ Introduction to AI agents in our daily life.
 
 ##Architecture
 
-fallfklsaslklsa
+Tell me how to go about this greenfield project.
 
 ##Scalability
 
-afsgdsdlkdl
+How many conversations can it handle ? What happens when EC2 instance shutdowns or migrates?
 
 ##Demo
 
-gkmslksdds
+ALl that is fine, does it work ?
