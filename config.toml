@@ -28,9 +28,9 @@ date_format="%d %b, %Y"
 webserver_sends_csp_headers=true
 
 [[extra.main_menu]]
+name = "Quotes"
+url = "@/qoutes.md"
+
+[[extra.main_menu]]
 name = "Posts"
 url = "@/posts/_index.md"
-
-#[[extra.main_menu]]
-#name = "Blog"
-#url = "@/blog/_index.md"
