@@ -1,11 +1,16 @@
----
-layout: post
-title: LTE-Unlicensed:How Cellular Providers are destroying the Freedom of Unlicensed Spectrum.
-comments: true
-brief:  With cellular providers jumping onto the unlicensed spectrum bandwagon on the premise that it is free for everyone, a careful examination is required to ensure that big businesses don’t benefit at the expense of a public good.
----
++++
+title = "Cellular Providers are destroying the Freedom of Unlicensed Spectrum."
+date = "2015-06-25"
+type = "post" 
+description = "How Cellular Providers are destroying the Freedom of Unlicensed Spectrum"
+in_search_index = true
+taxonomies.tags = [
+    "wifi",
+    "fairness",
+]
++++
 
------
+---
 
 Unlicensed spectrum, much like a public park or a playground, is a public good.
 It is a set of airwaves designated by the Federal Communications Commission (FCC)
@@ -39,7 +44,7 @@ decongest their licensed spectrum by offloading traffic to the unlicensed
 spectrum, but also charge their users for the additional spectrum. But if the
 cellular companies are winning, someone must be losing.
 
-##Who will lose?
+## Who will lose?
 
 Today, most of the cellular devices such as smartphones and tablets have a
 separate WiFi, Bluetooth and LTE interface. Among these, WiFi and Bluetooth run
@@ -95,7 +100,7 @@ share the spectrum with others. This is a huge challenge because existing FCC
 regulations will not be enough to ensure fair sharing between LTE-Unlicensed and
 WiFi devices.
 
-##Bluetooth and WiFi can coexist, why not LTE-Unlicensed and WiFi ?
+## Bluetooth and WiFi can coexist, why not LTE-Unlicensed and WiFi ?
 
 Thankfully, Bluetooth has never been a commercial service. Though WiFi is often
 commercially sold, it never really had to compete with Bluetooth devices. This
@@ -114,7 +119,7 @@ who happily use the spectrum for free.  And therein lies the difference. When
 there are technologies that are going to compete with each other using the same
 resource, coexistence cannot be a solution.
 
-##The net-neutrality issue, again
+## The net-neutrality issue, again
 
 Much has been said and written about the neutrality of the Internet. There are
 service providers who want to differentiate Internet traffic based on the
@@ -127,7 +132,7 @@ claim to benefit the public at large by promising better services, but this
 comes with the serious impact on existing WiFi and other small networks that we
 own in our daily lives.
 
-##Conclusion
+## Conclusion
 
 With cellular providers jumping onto the unlicensed spectrum bandwagon on the
 premise that it is free for everyone, a careful examination is required to

@@ -1,0 +1,36 @@
+title = "Krishna C. Garikipati"
+base_url = "https://gkchai.github.io"
+description = "ML and other stuff."
+generate_feed = false
+feed_filename = "atom.xml" # default template
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = false
+minify_html = false
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+taxonomies = [
+  {name = "categories", feed = true},
+  {name = "tags", feed = true},
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "one-dark"
+render_emoji = true
+smart_punctuation = true
+[extra]
+date_format="%d %b, %Y"
+webserver_sends_csp_headers=true
+
+[[extra.main_menu]]
+name = "Posts"
+url = "@/posts/_index.md"
+
+#[[extra.main_menu]]
+#name = "Blog"
+#url = "@/blog/_index.md"
