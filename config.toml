@@ -29,7 +29,7 @@ webserver_sends_csp_headers=true
 
 [[extra.main_menu]]
 name = "Quotes"
-url = "@/qoutes.md"
+url = "@/quotes.md"
 
 [[extra.main_menu]]
 name = "Posts"
