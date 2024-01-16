@@ -9,9 +9,8 @@ taxonomies.tags = [
 ]
 +++
 
-## [Socratic method of questioning](https://www.intel.com/content/dam/www/program/education/us/en/documents/project-design/strategies/dep-question-socratic.pdf)
+## Introspection for Senior and Staff engineers
 
-* How to act as senior or staff engineer:
 * How to run a meeting, and no, being the person who talks the most in the meeting is not the same thing as running it
 * How to write a design doc, take feedback, and drive it to resolution, in a reasonable period of time
 * How to mentor an early-career teammate, a mid-career engineer, a new manager who needs technical advice
