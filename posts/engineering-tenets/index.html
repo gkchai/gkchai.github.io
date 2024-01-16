@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenets for Technical Leadership | Krishna C. Garikipati</title>
+  <meta name="title" content="Tenets for Technical Leadership">
+<meta name="description" content="ML and other stuff." />
+
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <style>  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  input {
+    font-size: 1rem;
+  }
+
+  main,article {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 0.875rem;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  /* blog posts */
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+</style>
+  </head>
+<body>
+  <header>
+  <a href="https:&#x2F;&#x2F;gkchai.github.io" class="title">
+    <h2>Krishna C. Garikipati</h2>
+  </a>
+  <nav>
+    <a href="https:&#x2F;&#x2F;gkchai.github.io">Home</a>
+      <a href="https://gkchai.github.io/quotes/">Quotes</a>
+      <a href="https://gkchai.github.io/posts/">Posts</a>
+  </nav>
+</header>
+
+    <h1>Tenets for Technical Leadership</h1>
+      <p>
+        <i>
+          <time datetime='2021-06-06T00:00:00+00:00' pubdate>06 Jun, 2021</time>
+        </i>
+      </p>
+  <main>
+    <h2 id="introspection-for-senior-and-staff-engineers"><a class="zola-anchor" href="#introspection-for-senior-and-staff-engineers" aria-label="Anchor link for: introspection-for-senior-and-staff-engineers">🔗</a>Introspection for Senior and Staff engineers</h2>
+<ul>
+<li>How to run a meeting, and no, being the person who talks the most in the meeting is not the same thing as running it</li>
+<li>How to write a design doc, take feedback, and drive it to resolution, in a reasonable period of time</li>
+<li>How to mentor an early-career teammate, a mid-career engineer, a new manager who needs technical advice</li>
+<li>How to indulge a senior manager who wants to talk about technical stuff that they don’t really understand, without 
+rolling your eyes or making them feel stupid</li>
+<li>How to explain a technical concept behind closed doors to a senior person too embarrassed to openly admit that they 
+don’t understand it</li>
+<li>How to influence another team to use your solution instead of writing their own</li>
+<li>How to get another engineer to do something for you by asking for help in a way that makes them feel appreciated</li>
+<li>How to lead a project even though you don’t manage any of the people working on the project</li>
+<li>How to get other engineers to listen to your ideas without making them feel threatened</li>
+<li>How to listen to other engineers’ ideas without feeling threatened</li>
+<li>How to give up your baby, that project that you built into something great, so you can do something else</li>
+<li>How to teach another engineer to care about that thing you really care about (operations, correctness, testing, 
+code quality, performance, simplicity, etc)</li>
+<li>How to communicate project status to stakeholders</li>
+<li>How to convince management that they need to invest in a non-trivial technical project</li>
+<li>How to build software while delivering incremental value in the process</li>
+<li>How to craft a project proposal, socialize it, and get buy-in to execute it</li>
+<li>How to repeat yourself enough that people start to listen</li>
+<li>How to pick your battles</li>
+<li>How to help someone get promoted</li>
+<li>How to get information about what’s really happening (how to gossip, how to network)</li>
+<li>How to find interesting work on your own, instead of waiting for someone to bring it to you</li>
+<li>How to tell someone they’re wrong without making them feel ashamed</li>
+<li>How to take negative feedback gracefully</li>
+</ul>
+<h2 id="hiring-for-t-shaped-over-i-shaped"><a class="zola-anchor" href="#hiring-for-t-shaped-over-i-shaped" aria-label="Anchor link for: hiring-for-t-shaped-over-i-shaped">🔗</a><a href="https://bastian.rieck.me/blog/posts/2022/t/">Hiring for T-shaped over I-shaped</a></h2>
+<p>Hiring T-shaped (one area of expertise with ability to collaborate) persons over I-shaped (expert) person. </p>
+<blockquote>
+<p>Ts are multipliers</p>
+</blockquote>
+<p>The most impactful projects always had a T-shaped person onboard. This person would usually not be an expert in the 
+subject matter, but would be able to provide the direly-needed scaffolding and foundation of a project that is all too often ignored in the initial phase, until it comes back later on with full swing to wreak havoc. This includes, for instance:</p>
+<ul>
+<li>Setting up a suitable build system.</li>
+<li>Writing some unit tests for the code.</li>
+<li>Creating a skeleton of the models that are to be developed.</li>
+<li>Designing nice mock-ups or logos.</li>
+<li>Creating animations or graphics for presentations.</li>
+</ul>
+
+  </main>
+  <p>
+        Tags:
+          <a href="https://gkchai.github.io/tags/engineering/">#engineering</a>
+  </p>
+<footer>
+        © 2024 Krishna C. Garikipati<br>
+    <div class="social-links">
+        <a href="https://github.com/gkchai" target="_blank" rel="noopener noreferrer" title="GitHub"
+           class="social-icon"><i data-feather="github"></i></a>
+        <a href="/posts/atom.xml" target="_blank" rel="noopener noreferrer" title="RSS Feed" class="social-icon"><i data-feather="rss"></i></a>
+    </div>
+</footer>
+</body>
+</html>
