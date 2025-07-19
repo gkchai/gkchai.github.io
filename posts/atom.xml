@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Krishna C. Garikipati - Posts</title>
+    <subtitle>ML and other stuff.</subtitle>
+    <link href="https://gkchai.github.io/posts/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://gkchai.github.io/posts/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-08-01T00:00:00+00:00</updated>
+    <id>https://gkchai.github.io/posts/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Typing Speed Matters</title>
+        <published>2023-08-01T00:00:00+00:00</published>
+        <updated>2023-08-01T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://gkchai.github.io/posts/typing-speed-matters/" type="text/html"/>
+        <id>https://gkchai.github.io/posts/typing-speed-matters/</id>
+        
+        <content type="html">&lt;hr &#x2F;&gt;
+&lt;p&gt;As someone who grew up in India mastering the pen and paper, typing on a keyboard was always a second fiddle. Though my 
+hunt-and-peck typing speed of 45wpm felt reasonable in the early days of my career, I gradually realized the 
+below-average typing speed was setting me aback among my software engineer peers. Thankfully, I’ve been addressing this 
+deficiency in the past couple years. I picked up touch typing&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;, and over time increased my typing 
+speed to 75wpm&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; (topping out at 90wpm on good days).&lt;&#x2F;p&gt;
+&lt;p&gt;Faster typing has made a noticeable difference to my day-to-day activities – programming, note-taking, doc-writing, 
+messaging, and so on. &lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It saves a bunch of time. Assuming a typical software engineer types 500 words per day, going from a typing speed 
+45wpm to 75wpm will save 4.4 minutes per day, and 27hrs over a year.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Improves communication. It becomes easier to respond to messages and one is less likely to lose a train of thought 
+while typing; and if the typing is accurate, less likely to make typos.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Reduces work fatigue, which contributes to one’s level of happiness.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Touch_typing&quot;&gt;Touch typing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; &lt;a href=&quot;https:&#x2F;&#x2F;10fastfingers.com&quot;&gt;10 Fast Fingers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
