@@ -1,8 +1,8 @@
 title = "Krishna C. Garikipati"
 base_url = "https://gkchai.github.io"
 description = "ML and other stuff."
-generate_feed = false
-feed_filename = "atom.xml" # default template
+generate_feeds = false
+feed_filenames = ["atom.xml"] # default template
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
@@ -17,12 +17,11 @@ taxonomies = [
 ]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
-highlight_theme = "one-dark"
 render_emoji = true
 smart_punctuation = true
+
+[markdown.highlighting]
+theme = "one-dark-pro"
 [extra]
 date_format="%d %b, %Y"
 webserver_sends_csp_headers=true
@@ -30,6 +29,10 @@ webserver_sends_csp_headers=true
 [[extra.main_menu]]
 name = "Quotes"
 url = "@/quotes.md"
+
+[[extra.main_menu]]
+name = "Books"
+url = "@/books.md"
 
 [[extra.main_menu]]
 name = "Posts"
