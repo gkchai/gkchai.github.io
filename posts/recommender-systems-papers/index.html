@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommender Systems: A Curated List of Papers | Krishna C. Garikipati</title>
+  <meta name="title" content="Recommender Systems: A Curated List of Papers">
+<meta name="description" content="ML and other stuff." />
+
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <style>  :root {
+    --bg: #ffffff;
+    --text: #000000;
+    --muted: #767676;
+    --border: #e8e8e8;
+    --link: #000000;
+    --link-visited: #555555;
+    --code-bg: #f5f5f5;
+
+    --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+      "Apple Color Emoji", "Segoe UI Emoji";
+    --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  html {
+    background: var(--bg);
+  }
+
+  body {
+    font-family: var(--serif);
+    margin: 0 auto;
+    padding: 28px 20px;
+    max-width: 760px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.75;
+    font-size: 18px;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  header {
+    margin-bottom: 2.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  header .title {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  header h2 {
+    font-family: var(--sans);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+
+  nav {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  main,
+  article {
+    line-height: 1.75;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--sans);
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin: 2rem 0 0.75rem;
+  }
+
+  h1 {
+    font-size: 2.05rem;
+    letter-spacing: -0.03em;
+    margin-top: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p,
+  ul,
+  ol {
+    margin: 1rem 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25rem;
+  }
+
+  li {
+    margin: 0.35rem 0;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:visited {
+    color: var(--link-visited);
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.92em;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.1em 0.35em;
+  }
+
+  pre {
+    overflow-x: auto;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1.25rem 0;
+  }
+
+  pre code {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    display: block;
+    white-space: pre;
+    font-size: 0.9em;
+  }
+
+  div.highlight pre {
+    background-color: transparent;
+    color: initial;
+    border: 0;
+    padding: 0;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    margin: 1.25rem 0;
+    padding: 0.25rem 0 0.25rem 1rem;
+    border-left: 3px solid var(--border);
+    color: var(--muted);
+  }
+
+  blockquote p {
+    margin: 0.75rem 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    font-size: 0.95em;
+  }
+
+  th,
+  td {
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.6rem;
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+    font-family: var(--sans);
+  }
+
+  textarea,
+  input {
+    font-family: var(--sans);
+    font-size: 1rem;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  footer {
+    margin-top: 2.5rem;
+    padding: 1.75rem 0 1rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 0.75rem;
+  }
+
+  .social-icon {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .social-icon:hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .helptext {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .errorlist {
+    color: #b45309;
+    font-size: 0.95rem;
+  }
+
+  /* blog posts list */
+  ul.blog-posts {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+  }
+
+  ul.blog-posts li {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.9rem;
+    align-items: baseline;
+    padding: 0.3rem 0;
+  }
+
+  ul.blog-posts li span {
+    color: var(--muted);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 560px) {
+    body {
+      padding: 22px 16px;
+      font-size: 17px;
+    }
+
+    ul.blog-posts li {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+  }
+
+  /* No dark mode — always light, matching jasonwei.net */
+
+  /* Giallo syntax highlighting (required by Zola 0.22+) */
+  .giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+  }
+  .giallo-ln {
+    display: inline-block;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
+  }
+</style>
+  </head>
+<body>
+  <header>
+  <a href="https:&#x2F;&#x2F;gkchai.github.io" class="title">
+    <h2>Krishna C. Garikipati</h2>
+  </a>
+  <nav>
+    <a href="https:&#x2F;&#x2F;gkchai.github.io">Home</a>
+      <a href="https://gkchai.github.io/quotes/">Quotes</a>
+      <a href="https://gkchai.github.io/books/">Books</a>
+      <a href="https://gkchai.github.io/posts/">Posts</a>
+  </nav>
+</header>
+
+    <h1>Recommender Systems: A Curated List of Papers</h1>
+      <p>
+        <i>
+          <time datetime='2025-10-01T00:00:00+00:00' pubdate>01 Oct, 2025</time>
+        </i>
+      </p>
+  <main>
+    <hr />
+<p>My reading list for recommender systems, organized by the areas that matter most in production.</p>
+<h2 id="value-modeling-calibration"><a class="zola-anchor" href="#value-modeling-calibration" aria-label="Anchor link for: value-modeling-calibration">🔗</a>Value Modeling &amp; Calibration</h2>
+<p>The utility function that combines action probabilities into a single ranking score is the conduit between the ML model and the product. In most cases, the actions are determined by the product definition, e.g. like, watch duration, dwell time, share, purchase. There are also actions that are outside the immediate user session and significantly impact long-term behavior, e.g. number of play days over the next 7 days, repeat purchases. Calibration becomes important when we want to associate monetary value to predictions, for instance, in ads ranking, or when the ranking score is a weighted sum of probabilities across heterogeneous models or actions.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2408.06512">Learned Ranking Function: From Short-term Behavior Predictions to Long-term User Satisfaction</a> – Google/YouTube, 2024</li>
+<li><a href="https://arxiv.org/abs/2307.04923">Ranking with Long-Term Constraints</a> – Google, 2023</li>
+<li><a href="https://integrityinstitute.org/research/what-we-know-about-using-non-engagement-signals-in-content-ranking">What We Know About Using Non-Engagement Signals in Content Ranking</a> – Integrity Institute, 2024</li>
+<li><a href="https://arxiv.org/abs/2405.02141">Multi-Objective Recommendation via Multivariate Policy Learning</a> – Spotify, 2024</li>
+<li><a href="https://arxiv.org/abs/2106.11541">Feedback Shaping: A Modeling Approach to Nurture Content Creation</a> – LinkedIn, 2021</li>
+<li><a href="https://dl.acm.org/doi/10.1145/3394486.3403392">Multi-task Learning and Calibration for Utility-based Home Feed Ranking</a> – Pinterest, 2020</li>
+<li><a href="https://arxiv.org/abs/1706.04599">On Calibration of Modern Neural Networks</a> – Cornell, 2017</li>
+<li><a href="https://research.google/blog/why-model-calibration-matters-and-how-to-achieve-it/">Why Model Calibration Matters and How to Achieve It</a> – Google, 2021</li>
+</ul>
+<h2 id="multi-task-ranking"><a class="zola-anchor" href="#multi-task-ranking" aria-label="Anchor link for: multi-task-ranking">🔗</a>Multi-task Ranking</h2>
+<p>Shared-bottom networks can suffer from negative transfer across tasks. MMoE and PLE introduce gating to decouple conflicting gradients through soft parameter sharing. ESMM solves sample selection bias in conversion modeling by jointly predicting over the entire impression space. Uncertainty weighting and GradNorm are well-known methods to automatically balance task losses, while PCGrad and MultiBalance directly resolve conflicting gradients.</p>
+<ul>
+<li><a href="https://dl.acm.org/doi/10.1145/3219819.3220007">Modeling Task Relationships in Multi-task Learning with Multi-gate Mixture-of-Experts</a> – Google, 2018</li>
+<li><a href="https://dl.acm.org/doi/10.1145/3383313.3412236">Progressive Layered Extraction (PLE): A Novel Multi-Task Learning (MTL) Model for Personalized Recommendations</a> – Tencent, 2020</li>
+<li><a href="https://dl.acm.org/doi/10.1145/3298689.3346997">Recommending What Video to Watch Next: A Multitask Ranking System</a> – Google, 2019</li>
+<li><a href="https://arxiv.org/abs/1804.07931">Entire Space Multi-Task Model: An Effective Approach for Estimating Post-Click Conversion Rate</a> – Alibaba, 2018</li>
+<li><a href="https://arxiv.org/abs/1705.07115">Multi-Task Learning Using Uncertainty to Weigh Losses for Scene Geometry and Semantics</a> – Cambridge, 2018</li>
+<li><a href="https://arxiv.org/abs/1711.02257">GradNorm: Gradient Normalization for Adaptive Loss Balancing in Deep Multitask Networks</a> – ICML, 2018</li>
+<li><a href="https://arxiv.org/abs/2001.06782">Gradient Surgery for Multi-Task Learning (PCGrad)</a> – Stanford/Google, 2020</li>
+<li><a href="https://arxiv.org/abs/2411.11871">MultiBalance: Multi-Objective Gradient Balancing in Industrial-Scale Multi-Task Recommendation System</a> – Meta, 2024</li>
+<li><a href="https://arxiv.org/abs/2302.09178">Improving Training Stability for Multitask Ranking Models in Recommender Systems</a> – Google, 2023</li>
+</ul>
+<h2 id="feature-interactions"><a class="zola-anchor" href="#feature-interactions" aria-label="Anchor link for: feature-interactions">🔗</a>Feature Interactions</h2>
+<p>Good feature architectures can solve the information bottleneck and significantly improve model performance. Deep and wide feature crossing (DCN) is the current standard. DCN V2 replaces DCN v1’s rank-1 cross layer with a full-rank (or mixture-of-low-rank) cross network. DHEN ensembles heterogeneous interaction modules in a deep hierarchy, capturing non-overlapping interaction patterns. Wukong stacks factorization machines to learn any-order interactions and demonstrates a scaling law across two orders of magnitude in model FLOPs. RankMixer replaces handcrafted crossing modules with hardware-aware token mixing, scaling ranking models by 100x parameters at similar latency.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2008.13535">DCN V2: Improved Deep &amp; Cross Network and Practical Lessons for Web-scale Learning to Rank Systems</a> – Google, 2020</li>
+<li><a href="https://arxiv.org/abs/2203.11014">DHEN: A Deep and Hierarchical Ensemble Network for Large-Scale Click-Through Rate Prediction</a> – Meta, 2022</li>
+<li><a href="https://arxiv.org/abs/2403.02545">Wukong: Towards a Scaling Law for Large-Scale Recommendation</a> – Meta, 2024</li>
+<li><a href="https://arxiv.org/abs/2507.15551">RankMixer: Scaling Up Ranking Models in Industrial Recommenders</a> – 2025</li>
+</ul>
+<h2 id="sequence-modeling-attention"><a class="zola-anchor" href="#sequence-modeling-attention" aria-label="Anchor link for: sequence-modeling-attention">🔗</a>Sequence Modeling &amp; Attention</h2>
+<p>User action history is one of the strongest ranking signals. The key shift was moving from bag-of-interactions to ordered sequences with attention. DIN introduced target-aware attention (candidate as query, history as keys), and is effective in practice. Self-attention captures inter-action relationships. Graph attention handles relational structure like social networks.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1706.06978">Deep Interest Network for Click-Through Rate Prediction</a> – Alibaba, 2017</li>
+<li><a href="https://arxiv.org/abs/1905.06874">Behavior Sequence Transformer for E-commerce Recommendation in Alibaba</a> – Alibaba, 2019</li>
+<li><a href="https://arxiv.org/abs/2006.05639">Search-based User Interest Modeling with Lifelong Sequential Behavior Data for Click-Through Rate Prediction</a> – Alibaba, 2020</li>
+<li><a href="https://arxiv.org/abs/2306.00087">TransAct: Transformer-based Realtime User Action Model for Recommendation at Pinterest</a> – Pinterest, 2023</li>
+<li><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a> – Google, 2017</li>
+<li><a href="https://arxiv.org/abs/2305.16102">Exposing Attention Glitches with Flip-Flop Language Modeling</a> – Stanford, 2023</li>
+</ul>
+<h2 id="embeddings-at-scale"><a class="zola-anchor" href="#embeddings-at-scale" aria-label="Anchor link for: embeddings-at-scale">🔗</a>Embeddings at Scale</h2>
+<p>At hundreds of millions of IDs, naive embedding tables hit memory limits and hash collisions silently degrade quality. Monolith solves this with collisionless tables. Frozen pretrained embeddings (XLM, E5) inject semantic understanding without end-to-end training cost, and are especially useful for cold-start items with text metadata but no behavioral signal.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2209.07663">Monolith: Real Time Recommendation System With Collisionless Embedding Table</a> – ByteDance, 2022</li>
+<li><a href="https://arxiv.org/abs/2309.07572">Efficient Data Representation Learning in Google-scale Systems</a> – Google, 2023</li>
+<li><a href="https://arxiv.org/abs/1901.07291">Cross-lingual Language Model Pretraining</a> – Facebook AI, 2019</li>
+<li><a href="https://arxiv.org/abs/2212.03533">Text Embeddings by Weakly-Supervised Contrastive Pre-training</a> – Microsoft, 2022</li>
+</ul>
+<h2 id="two-tower-retrieval"><a class="zola-anchor" href="#two-tower-retrieval" aria-label="Anchor link for: two-tower-retrieval">🔗</a>Two Tower Retrieval</h2>
+<p>One tower for the user, one for the item, dot product for scoring, ANN index for serving. In-batch negatives over-penalize popular items since they appear as negatives disproportionately often. LogQ correction (Yi et al., 2019) fixes this. </p>
+<ul>
+<li><a href="https://dl.acm.org/doi/10.1145/2959100.2959190">Deep Neural Networks for YouTube Recommendations</a> – Google, 2016</li>
+<li><a href="https://dl.acm.org/doi/10.1145/3298689.3346996">Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations</a> – Google, 2019</li>
+<li><a href="https://research.google/pubs/mixed-negative-sampling-for-learning-two-tower-neural-networks-in-recommendations/">Mixed Negative Sampling for Learning Two-tower Neural Networks in Recommendations</a> – Google, 2020</li>
+<li><a href="https://arxiv.org/abs/2007.12865">Self-supervised Learning for Large-scale Item Recommendations</a> – Google, 2020</li>
+<li><a href="https://arxiv.org/abs/2110.15154">Cross-Batch Negative Sampling for Training Two-Tower Recommenders</a> – Huawei, 2021</li>
+<li><a href="https://arxiv.org/abs/1603.09320">Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs</a> – Russian Academy of Sciences, 2016</li>
+<li><a href="https://arxiv.org/abs/2007.07203">Deep Retrieval: Learning A Retrievable Structure for Large-Scale Recommendations</a> – ByteDance, 2020</li>
+<li><a href="https://arxiv.org/abs/2309.07402">Full Index Deep Retrieval: End-to-End User and Item Structures for Cold-start and Long-tail Item Recommendation</a> – ByteDance/SJTU, 2023</li>
+</ul>
+<h2 id="exploration"><a class="zola-anchor" href="#exploration" aria-label="Anchor link for: exploration">🔗</a>Exploration</h2>
+<p>Popurality bias in recommendations is a long-standing issue. Fresh items have no signal, so models trained on historical data are biased against them. Standard A/B tests compound the problem because they penalize exploration by comparing signal-rich control against signal-poor variants.</p>
+<ul>
+<li><a href="https://dl.acm.org/doi/10.1145/3460231.3474236">Values of User Exploration in Recommender Systems</a> – Google, 2021</li>
+<li><a href="https://arxiv.org/abs/2305.09498">Long-Term Value of Exploration: Measurements, Findings and Algorithms</a> – Google, 2023</li>
+<li><a href="https://arxiv.org/abs/2311.14592">Nonlinear Bandits Exploration for Recommendations</a> – Google, 2023</li>
+<li><a href="https://dl.acm.org/doi/10.1145/3580305.3599882">Online Matching: A Real-time Bandit System for Large-scale Recommendations</a> – Google, 2023</li>
+<li><a href="https://dl.acm.org/doi/10.1145/3580305.3599881">Fresh Content Needs More Attention: Multi-funnel Fresh Content Recommendation</a> – Google, 2023</li>
+</ul>
+<h2 id="generative-recommendations"><a class="zola-anchor" href="#generative-recommendations" aria-label="Anchor link for: generative-recommendations">🔗</a>Generative Recommendations</h2>
+<p>BERT4Rec and HSTU showed recommendation works as next-item prediction. TIGER proved you can tokenize items into semantic IDs via hierarchical clustering and generate recommendations autoregressively. OneRec replaced an entire multi-stage pipeline with one generative model, achieving better app stay time with dramatically lower system complexity. A recent Google paper argues the real win is the clustering, not the autoregressive generation. Full softmax over item clusters gets equivalent results 10x faster.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1904.06690">BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer</a> – Alibaba, 2019</li>
+<li><a href="https://arxiv.org/abs/2207.02643">Effective and Efficient Training for Sequential Recommendation using Recency Sampling</a> – University of Glasgow, 2022</li>
+<li><a href="https://arxiv.org/abs/2308.12256">Learning from Negative User Feedback and Measuring Responsiveness for Sequential Recommenders</a> – Google, 2023</li>
+<li><a href="https://arxiv.org/abs/2305.05065">Recommender Systems with Generative Retrieval (TIGER)</a> – Google, 2023</li>
+<li><a href="https://arxiv.org/abs/2402.17152">Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations</a> – Meta, 2024</li>
+<li><a href="https://arxiv.org/abs/2506.13695">OneRec: Unifying Retrieve and Rank with Generative Recommendation</a> – Kuaishou, 2025</li>
+<li><a href="https://arxiv.org/abs/2509.03746">Semantic ID Based Recommendation: An Order of Magnitude Faster with Comparable Quality</a> – Google, 2025</li>
+</ul>
+<h2 id="others"><a class="zola-anchor" href="#others" aria-label="Anchor link for: others">🔗</a>Others</h2>
+<ul>
+<li><a href="https://dl.acm.org/doi/10.1145/2648584.2648589">Practical Lessons from Predicting Clicks on Ads at Facebook</a> – Facebook, 2014</li>
+<li><a href="https://arxiv.org/abs/2012.08724">Trustworthy Online Marketplace Experimentation with Budget-split Design</a> – LinkedIn, 2020</li>
+<li><a href="https://arxiv.org/abs/2209.06053">Towards Understanding the Overfitting Phenomenon of Deep Click-Through Rate Prediction Models</a> – Alibaba, 2022</li>
+<li><a href="https://arxiv.org/abs/1903.00780">Fairness in Recommendation Ranking through Pairwise Comparisons</a> – Google, 2019</li>
+</ul>
+
+  </main>
+  <p>
+        Tags:
+          <a href="https://gkchai.github.io/tags/machine-learning/">#machine-learning</a>
+          <a href="https://gkchai.github.io/tags/recommender-systems/">#recommender-systems</a>
+  </p>
+<footer>
+        © 2026 Krishna C. Garikipati<br>
+    <div class="social-links">
+        <a href="https://github.com/gkchai" target="_blank" rel="noopener noreferrer" title="GitHub"
+           class="social-icon"><i data-feather="github"></i></a>
+        <a href="/posts/atom.xml" target="_blank" rel="noopener noreferrer" title="RSS Feed" class="social-icon"><i data-feather="rss"></i></a>
+    </div>
+</footer>
+</body>
+</html>

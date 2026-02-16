@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Krishna C. Garikipati - productivity</title>
+    <subtitle>ML and other stuff.</subtitle>
+    <link href="https://gkchai.github.io/tags/productivity/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://gkchai.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-07-08T00:00:00+00:00</updated>
+    <id>https://gkchai.github.io/tags/productivity/atom.xml</id>
+    <entry xml:lang="en">
+        <title>My Typing Journey</title>
+        <published>2021-07-08T00:00:00+00:00</published>
+        <updated>2021-07-08T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://gkchai.github.io/posts/my-typing-journey/" type="text/html"/>
+        <id>https://gkchai.github.io/posts/my-typing-journey/</id>
+        
+        <content type="html">&lt;hr &#x2F;&gt;
+&lt;p&gt;I noticed something different when I started my new job. My teammates had better typing speeds than what I was used to. They were taking down Quip notes with ease in our team meetings and discussions. Needless to say I felt a bit embarrassed at the thought of me taking down notes in full public view one day.&lt;&#x2F;p&gt;
+&lt;p&gt;Then I came across a couple of online resources that strongly motivated me to improve my typing speed. With enough motivation in the tank and the burning desire to fit in at my new workplace I began my journey to master the art of typing.&lt;&#x2F;p&gt;
+&lt;p&gt;I am happy to announce that after around 1 month and around 100 hrs later, I am comfortably typing at 60wpm with 95% accuracy.&lt;&#x2F;p&gt;
+&lt;p&gt;I started at 35wpm with 80-90% accuracy.&lt;&#x2F;p&gt;
+&lt;p&gt;I mainly used &lt;a href=&quot;https:&#x2F;&#x2F;www.keybr.com&quot;&gt;keybr.com&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;10fastfingers.com&quot;&gt;10fastfingers.com&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;play.typeracer.com&quot;&gt;typeracer.com&lt;&#x2F;a&gt;, and &lt;a href=&quot;https:&#x2F;&#x2F;www.typingtest.com&quot;&gt;typingtest.com&lt;&#x2F;a&gt; to practice and test myself.&lt;&#x2F;p&gt;
+&lt;p&gt;I used keybr.com to track my progress:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;tt1.png&quot; alt=&quot;Typing speed progress on keybr.com&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The initial part of the curve is me trying to push as much as possible with my old typing style. No matter how hard I tried I could not exceed 50wpm and that too at a very high error rate.&lt;&#x2F;p&gt;
+&lt;p&gt;Then I learnt touch typing.&lt;&#x2F;p&gt;
+&lt;p&gt;First, it was the right hand. I reached up to 50wpm with the change. Then I learnt touch typing on the left hand. Finally I was able to cross the 50wpm barrier. Since then I have been focusing on reducing the number of errors.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;update-09-30-21&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#update-09-30-21&quot; aria-label=&quot;Anchor link for: update-09-30-21&quot;&gt;🔗&lt;&#x2F;a&gt;Update: 09&#x2F;30&#x2F;21&lt;&#x2F;h3&gt;
+&lt;p&gt;Comfortably typing between 75-80 wpm. Next goal is 100wpm.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;tt2.png&quot; alt=&quot;Typing speed progress - 75-80 wpm&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;update-10-12-21&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#update-10-12-21&quot; aria-label=&quot;Anchor link for: update-10-12-21&quot;&gt;🔗&lt;&#x2F;a&gt;Update: 10&#x2F;12&#x2F;21&lt;&#x2F;h3&gt;
+&lt;p&gt;Achieved a new personal record of 86wpm!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;tt3.png&quot; alt=&quot;86 WPM personal record on 10fastfingers&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

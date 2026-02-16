@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Krishna C. Garikipati - machine-learning</title>
+    <subtitle>ML and other stuff.</subtitle>
+    <link href="https://gkchai.github.io/tags/machine-learning/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://gkchai.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-10-01T00:00:00+00:00</updated>
+    <id>https://gkchai.github.io/tags/machine-learning/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Recommender Systems: A Curated List of Papers</title>
+        <published>2025-10-01T00:00:00+00:00</published>
+        <updated>2025-10-01T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://gkchai.github.io/posts/recommender-systems-papers/" type="text/html"/>
+        <id>https://gkchai.github.io/posts/recommender-systems-papers/</id>
+        
+        <content type="html">&lt;hr &#x2F;&gt;
+&lt;p&gt;My reading list for recommender systems, organized by the areas that matter most in production.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;value-modeling-calibration&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#value-modeling-calibration&quot; aria-label=&quot;Anchor link for: value-modeling-calibration&quot;&gt;🔗&lt;&#x2F;a&gt;Value Modeling &amp;amp; Calibration&lt;&#x2F;h2&gt;
+&lt;p&gt;The utility function that combines action probabilities into a single ranking score is the conduit between the ML model and the product. In most cases, the actions are determined by the product definition, e.g. like, watch duration, dwell time, share, purchase. There are also actions that are outside the immediate user session and significantly impact long-term behavior, e.g. number of play days over the next 7 days, repeat purchases. Calibration becomes important when we want to associate monetary value to predictions, for instance, in ads ranking, or when the ranking score is a weighted sum of probabilities across heterogeneous models or actions.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2408.06512&quot;&gt;Learned Ranking Function: From Short-term Behavior Predictions to Long-term User Satisfaction&lt;&#x2F;a&gt; – Google&#x2F;YouTube, 2024&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2307.04923&quot;&gt;Ranking with Long-Term Constraints&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;integrityinstitute.org&#x2F;research&#x2F;what-we-know-about-using-non-engagement-signals-in-content-ranking&quot;&gt;What We Know About Using Non-Engagement Signals in Content Ranking&lt;&#x2F;a&gt; – Integrity Institute, 2024&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2405.02141&quot;&gt;Multi-Objective Recommendation via Multivariate Policy Learning&lt;&#x2F;a&gt; – Spotify, 2024&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2106.11541&quot;&gt;Feedback Shaping: A Modeling Approach to Nurture Content Creation&lt;&#x2F;a&gt; – LinkedIn, 2021&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;3394486.3403392&quot;&gt;Multi-task Learning and Calibration for Utility-based Home Feed Ranking&lt;&#x2F;a&gt; – Pinterest, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1706.04599&quot;&gt;On Calibration of Modern Neural Networks&lt;&#x2F;a&gt; – Cornell, 2017&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;research.google&#x2F;blog&#x2F;why-model-calibration-matters-and-how-to-achieve-it&#x2F;&quot;&gt;Why Model Calibration Matters and How to Achieve It&lt;&#x2F;a&gt; – Google, 2021&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;multi-task-ranking&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#multi-task-ranking&quot; aria-label=&quot;Anchor link for: multi-task-ranking&quot;&gt;🔗&lt;&#x2F;a&gt;Multi-task Ranking&lt;&#x2F;h2&gt;
+&lt;p&gt;Shared-bottom networks can suffer from negative transfer across tasks. MMoE and PLE introduce gating to decouple conflicting gradients through soft parameter sharing. ESMM solves sample selection bias in conversion modeling by jointly predicting over the entire impression space. Uncertainty weighting and GradNorm are well-known methods to automatically balance task losses, while PCGrad and MultiBalance directly resolve conflicting gradients.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;3219819.3220007&quot;&gt;Modeling Task Relationships in Multi-task Learning with Multi-gate Mixture-of-Experts&lt;&#x2F;a&gt; – Google, 2018&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;3383313.3412236&quot;&gt;Progressive Layered Extraction (PLE): A Novel Multi-Task Learning (MTL) Model for Personalized Recommendations&lt;&#x2F;a&gt; – Tencent, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;3298689.3346997&quot;&gt;Recommending What Video to Watch Next: A Multitask Ranking System&lt;&#x2F;a&gt; – Google, 2019&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1804.07931&quot;&gt;Entire Space Multi-Task Model: An Effective Approach for Estimating Post-Click Conversion Rate&lt;&#x2F;a&gt; – Alibaba, 2018&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1705.07115&quot;&gt;Multi-Task Learning Using Uncertainty to Weigh Losses for Scene Geometry and Semantics&lt;&#x2F;a&gt; – Cambridge, 2018&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1711.02257&quot;&gt;GradNorm: Gradient Normalization for Adaptive Loss Balancing in Deep Multitask Networks&lt;&#x2F;a&gt; – ICML, 2018&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2001.06782&quot;&gt;Gradient Surgery for Multi-Task Learning (PCGrad)&lt;&#x2F;a&gt; – Stanford&#x2F;Google, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2411.11871&quot;&gt;MultiBalance: Multi-Objective Gradient Balancing in Industrial-Scale Multi-Task Recommendation System&lt;&#x2F;a&gt; – Meta, 2024&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2302.09178&quot;&gt;Improving Training Stability for Multitask Ranking Models in Recommender Systems&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;feature-interactions&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#feature-interactions&quot; aria-label=&quot;Anchor link for: feature-interactions&quot;&gt;🔗&lt;&#x2F;a&gt;Feature Interactions&lt;&#x2F;h2&gt;
+&lt;p&gt;Good feature architectures can solve the information bottleneck and significantly improve model performance. Deep and wide feature crossing (DCN) is the current standard. DCN V2 replaces DCN v1’s rank-1 cross layer with a full-rank (or mixture-of-low-rank) cross network. DHEN ensembles heterogeneous interaction modules in a deep hierarchy, capturing non-overlapping interaction patterns. Wukong stacks factorization machines to learn any-order interactions and demonstrates a scaling law across two orders of magnitude in model FLOPs. RankMixer replaces handcrafted crossing modules with hardware-aware token mixing, scaling ranking models by 100x parameters at similar latency.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2008.13535&quot;&gt;DCN V2: Improved Deep &amp;amp; Cross Network and Practical Lessons for Web-scale Learning to Rank Systems&lt;&#x2F;a&gt; – Google, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2203.11014&quot;&gt;DHEN: A Deep and Hierarchical Ensemble Network for Large-Scale Click-Through Rate Prediction&lt;&#x2F;a&gt; – Meta, 2022&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2403.02545&quot;&gt;Wukong: Towards a Scaling Law for Large-Scale Recommendation&lt;&#x2F;a&gt; – Meta, 2024&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2507.15551&quot;&gt;RankMixer: Scaling Up Ranking Models in Industrial Recommenders&lt;&#x2F;a&gt; – 2025&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;sequence-modeling-attention&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#sequence-modeling-attention&quot; aria-label=&quot;Anchor link for: sequence-modeling-attention&quot;&gt;🔗&lt;&#x2F;a&gt;Sequence Modeling &amp;amp; Attention&lt;&#x2F;h2&gt;
+&lt;p&gt;User action history is one of the strongest ranking signals. The key shift was moving from bag-of-interactions to ordered sequences with attention. DIN introduced target-aware attention (candidate as query, history as keys), and is effective in practice. Self-attention captures inter-action relationships. Graph attention handles relational structure like social networks.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1706.06978&quot;&gt;Deep Interest Network for Click-Through Rate Prediction&lt;&#x2F;a&gt; – Alibaba, 2017&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1905.06874&quot;&gt;Behavior Sequence Transformer for E-commerce Recommendation in Alibaba&lt;&#x2F;a&gt; – Alibaba, 2019&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2006.05639&quot;&gt;Search-based User Interest Modeling with Lifelong Sequential Behavior Data for Click-Through Rate Prediction&lt;&#x2F;a&gt; – Alibaba, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2306.00087&quot;&gt;TransAct: Transformer-based Realtime User Action Model for Recommendation at Pinterest&lt;&#x2F;a&gt; – Pinterest, 2023&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1706.03762&quot;&gt;Attention Is All You Need&lt;&#x2F;a&gt; – Google, 2017&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2305.16102&quot;&gt;Exposing Attention Glitches with Flip-Flop Language Modeling&lt;&#x2F;a&gt; – Stanford, 2023&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;embeddings-at-scale&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#embeddings-at-scale&quot; aria-label=&quot;Anchor link for: embeddings-at-scale&quot;&gt;🔗&lt;&#x2F;a&gt;Embeddings at Scale&lt;&#x2F;h2&gt;
+&lt;p&gt;At hundreds of millions of IDs, naive embedding tables hit memory limits and hash collisions silently degrade quality. Monolith solves this with collisionless tables. Frozen pretrained embeddings (XLM, E5) inject semantic understanding without end-to-end training cost, and are especially useful for cold-start items with text metadata but no behavioral signal.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2209.07663&quot;&gt;Monolith: Real Time Recommendation System With Collisionless Embedding Table&lt;&#x2F;a&gt; – ByteDance, 2022&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2309.07572&quot;&gt;Efficient Data Representation Learning in Google-scale Systems&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1901.07291&quot;&gt;Cross-lingual Language Model Pretraining&lt;&#x2F;a&gt; – Facebook AI, 2019&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2212.03533&quot;&gt;Text Embeddings by Weakly-Supervised Contrastive Pre-training&lt;&#x2F;a&gt; – Microsoft, 2022&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;two-tower-retrieval&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#two-tower-retrieval&quot; aria-label=&quot;Anchor link for: two-tower-retrieval&quot;&gt;🔗&lt;&#x2F;a&gt;Two Tower Retrieval&lt;&#x2F;h2&gt;
+&lt;p&gt;One tower for the user, one for the item, dot product for scoring, ANN index for serving. In-batch negatives over-penalize popular items since they appear as negatives disproportionately often. LogQ correction (Yi et al., 2019) fixes this. &lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;2959100.2959190&quot;&gt;Deep Neural Networks for YouTube Recommendations&lt;&#x2F;a&gt; – Google, 2016&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;3298689.3346996&quot;&gt;Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations&lt;&#x2F;a&gt; – Google, 2019&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;research.google&#x2F;pubs&#x2F;mixed-negative-sampling-for-learning-two-tower-neural-networks-in-recommendations&#x2F;&quot;&gt;Mixed Negative Sampling for Learning Two-tower Neural Networks in Recommendations&lt;&#x2F;a&gt; – Google, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2007.12865&quot;&gt;Self-supervised Learning for Large-scale Item Recommendations&lt;&#x2F;a&gt; – Google, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2110.15154&quot;&gt;Cross-Batch Negative Sampling for Training Two-Tower Recommenders&lt;&#x2F;a&gt; – Huawei, 2021&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1603.09320&quot;&gt;Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs&lt;&#x2F;a&gt; – Russian Academy of Sciences, 2016&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2007.07203&quot;&gt;Deep Retrieval: Learning A Retrievable Structure for Large-Scale Recommendations&lt;&#x2F;a&gt; – ByteDance, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2309.07402&quot;&gt;Full Index Deep Retrieval: End-to-End User and Item Structures for Cold-start and Long-tail Item Recommendation&lt;&#x2F;a&gt; – ByteDance&#x2F;SJTU, 2023&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;exploration&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#exploration&quot; aria-label=&quot;Anchor link for: exploration&quot;&gt;🔗&lt;&#x2F;a&gt;Exploration&lt;&#x2F;h2&gt;
+&lt;p&gt;Popurality bias in recommendations is a long-standing issue. Fresh items have no signal, so models trained on historical data are biased against them. Standard A&#x2F;B tests compound the problem because they penalize exploration by comparing signal-rich control against signal-poor variants.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;3460231.3474236&quot;&gt;Values of User Exploration in Recommender Systems&lt;&#x2F;a&gt; – Google, 2021&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2305.09498&quot;&gt;Long-Term Value of Exploration: Measurements, Findings and Algorithms&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2311.14592&quot;&gt;Nonlinear Bandits Exploration for Recommendations&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;3580305.3599882&quot;&gt;Online Matching: A Real-time Bandit System for Large-scale Recommendations&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;3580305.3599881&quot;&gt;Fresh Content Needs More Attention: Multi-funnel Fresh Content Recommendation&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;generative-recommendations&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#generative-recommendations&quot; aria-label=&quot;Anchor link for: generative-recommendations&quot;&gt;🔗&lt;&#x2F;a&gt;Generative Recommendations&lt;&#x2F;h2&gt;
+&lt;p&gt;BERT4Rec and HSTU showed recommendation works as next-item prediction. TIGER proved you can tokenize items into semantic IDs via hierarchical clustering and generate recommendations autoregressively. OneRec replaced an entire multi-stage pipeline with one generative model, achieving better app stay time with dramatically lower system complexity. A recent Google paper argues the real win is the clustering, not the autoregressive generation. Full softmax over item clusters gets equivalent results 10x faster.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1904.06690&quot;&gt;BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer&lt;&#x2F;a&gt; – Alibaba, 2019&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2207.02643&quot;&gt;Effective and Efficient Training for Sequential Recommendation using Recency Sampling&lt;&#x2F;a&gt; – University of Glasgow, 2022&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2308.12256&quot;&gt;Learning from Negative User Feedback and Measuring Responsiveness for Sequential Recommenders&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2305.05065&quot;&gt;Recommender Systems with Generative Retrieval (TIGER)&lt;&#x2F;a&gt; – Google, 2023&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2402.17152&quot;&gt;Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations&lt;&#x2F;a&gt; – Meta, 2024&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2506.13695&quot;&gt;OneRec: Unifying Retrieve and Rank with Generative Recommendation&lt;&#x2F;a&gt; – Kuaishou, 2025&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2509.03746&quot;&gt;Semantic ID Based Recommendation: An Order of Magnitude Faster with Comparable Quality&lt;&#x2F;a&gt; – Google, 2025&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;others&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#others&quot; aria-label=&quot;Anchor link for: others&quot;&gt;🔗&lt;&#x2F;a&gt;Others&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;10.1145&#x2F;2648584.2648589&quot;&gt;Practical Lessons from Predicting Clicks on Ads at Facebook&lt;&#x2F;a&gt; – Facebook, 2014&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2012.08724&quot;&gt;Trustworthy Online Marketplace Experimentation with Budget-split Design&lt;&#x2F;a&gt; – LinkedIn, 2020&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2209.06053&quot;&gt;Towards Understanding the Overfitting Phenomenon of Deep Click-Through Rate Prediction Models&lt;&#x2F;a&gt; – Alibaba, 2022&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1903.00780&quot;&gt;Fairness in Recommendation Ranking through Pairwise Comparisons&lt;&#x2F;a&gt; – Google, 2019&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>
