@@ -15,7 +15,7 @@ My reading list for recommender systems, organized by the areas that matter most
 
 ## Value Modeling & Calibration
 
-The utility function that combines action probabilities into a single ranking score is the conduit between the ML model and the product. In most cases, the actions are determined by the product definition, e.g. like, watch duration, dwell time, share, purchase. There are also actions that go beyond the immediate user session but significantly impact long-term retention, e.g. number of play days over the next 7 days, repeat purchases. Calibration becomes important when we want to associate monetary value to predictions or when the ranking score is a weighted sum of probabilities across heterogeneous actions -- if any task's predictions are systematically off, the ranking is distorted no matter how the weights are tuned. The Learned Ranking Function replaces hand-tuned value models with a learned function directly optimized for long-term satisfaction.
+The utility function that combines action probabilities into a single ranking score is the conduit between the ML model and the product. In most cases, the actions are determined by the product definition, e.g. like, watch duration, dwell time, share, purchase. There are also actions that are outside the immediate user session and significantly impact long-term behaviior, e.g. number of play days over the next 7 days, repeat purchases. Calibration becomes important when we want to associate monetary value to predictions, for instance, in ads ranking, or when the ranking score is a weighted sum of probabilities across heterogeneous models or actions.
 
 - [Learned Ranking Function: From Short-term Behavior Predictions to Long-term User Satisfaction](https://arxiv.org/abs/2408.06512) -- Google/YouTube, 2024
 - [Ranking with Long-Term Constraints](https://arxiv.org/abs/2307.04923) -- Google, 2023
@@ -24,13 +24,11 @@ The utility function that combines action probabilities into a single ranking sc
 - [Feedback Shaping: A Modeling Approach to Nurture Content Creation](https://arxiv.org/abs/2106.11541) -- LinkedIn, 2021
 - [Multi-task Learning and Calibration for Utility-based Home Feed Ranking](https://dl.acm.org/doi/10.1145/3394486.3403392) -- Pinterest, 2020
 - [On Calibration of Modern Neural Networks](https://arxiv.org/abs/1706.04599) -- Cornell, 2017
-- [Predicting Good Probabilities with Supervised Learning](https://dl.acm.org/doi/10.1145/1102351.1102430) -- Cornell, 2005
-- [The Foundations of Cost-Sensitive Learning](https://cseweb.ucsd.edu/~elkan/rescoop.pdf) -- UCSD, 2001
 - [Why Model Calibration Matters and How to Achieve It](https://research.google/blog/why-model-calibration-matters-and-how-to-achieve-it/) -- Google, 2021
 
 ## Multi-task Ranking
 
-Shared-bottom networks suffer from negative transfer across tasks. MMoE and PLE introduce gating to decouple conflicting gradients. ESMM solves sample selection bias in conversion modeling by jointly predicting over the entire impression space. On the optimization side, uncertainty weighting and GradNorm automatically balance task losses, while PCGrad and MultiBalance directly resolve conflicting gradients.
+Shared-bottom networks can suffer from negative transfer across tasks. MMoE and PLE introduce gating to decouple conflicting gradients through soft parameter sharing. ESMM solves sample selection bias in conversion modeling by jointly predicting over the entire impression space. Uncertainty weighting and GradNorm are well-known methods to automatically balance task losses, while PCGrad and MultiBalance directly resolve conflicting gradients.
 
 - [Modeling Task Relationships in Multi-task Learning with Multi-gate Mixture-of-Experts](https://dl.acm.org/doi/10.1145/3219819.3220007) -- Google, 2018
 - [Progressive Layered Extraction (PLE): A Novel Multi-Task Learning (MTL) Model for Personalized Recommendations](https://dl.acm.org/doi/10.1145/3383313.3412236) -- Tencent, 2020
@@ -53,7 +51,7 @@ Good feature architectures can solve the information bottleneck and significantl
 
 ## Sequence Modeling & Attention
 
-User action history is one of the strongest ranking signals. The key shift was moving from bag-of-interactions to ordered sequences with attention. DIN introduced target-aware attention (candidate as query, history as keys), and it remains the most impactful pattern in ranking. Self-attention captures inter-action relationships. Graph attention handles relational structure like social networks.
+User action history is one of the strongest ranking signals. The key shift was moving from bag-of-interactions to ordered sequences with attention. DIN introduced target-aware attention (candidate as query, history as keys), and is effective in practice. Self-attention captures inter-action relationships. Graph attention handles relational structure like social networks.
 
 - [Deep Interest Network for Click-Through Rate Prediction](https://arxiv.org/abs/1706.06978) -- Alibaba, 2017
 - [Behavior Sequence Transformer for E-commerce Recommendation in Alibaba](https://arxiv.org/abs/1905.06874) -- Alibaba, 2019
@@ -64,7 +62,7 @@ User action history is one of the strongest ranking signals. The key shift was m
 
 ## Embeddings at Scale
 
-Two problems: training them and importing them. At hundreds of millions of IDs, naive embedding tables hit memory limits and hash collisions silently degrade quality. Monolith solves this with collisionless tables. Frozen pretrained embeddings (XLM, E5) inject semantic understanding without end-to-end training cost, and are especially useful for cold-start items with text metadata but no behavioral signal.
+At hundreds of millions of IDs, naive embedding tables hit memory limits and hash collisions silently degrade quality. Monolith solves this with collisionless tables. Frozen pretrained embeddings (XLM, E5) inject semantic understanding without end-to-end training cost, and are especially useful for cold-start items with text metadata but no behavioral signal.
 
 - [Monolith: Real Time Recommendation System With Collisionless Embedding Table](https://arxiv.org/abs/2209.07663) -- ByteDance, 2022
 - [Efficient Data Representation Learning in Google-scale Systems](https://arxiv.org/abs/2309.07572) -- Google, 2023
@@ -73,7 +71,7 @@ Two problems: training them and importing them. At hundreds of millions of IDs, 
 
 ## Two Tower Retrieval
 
-One tower for the user, one for the item, dot product for scoring, ANN index for serving. Simple negative sampling and bias correction make or break it. In-batch negatives over-penalize popular items since they appear as negatives disproportionately often. LogQ correction (Yi et al., 2019) fixes this. Without it, the model under-retrieves genuinely popular items and surfaces irrelevant long-tail results.
+One tower for the user, one for the item, dot product for scoring, ANN index for serving. In-batch negatives over-penalize popular items since they appear as negatives disproportionately often. LogQ correction (Yi et al., 2019) fixes this. 
 
 - [Deep Neural Networks for YouTube Recommendations](https://dl.acm.org/doi/10.1145/2959100.2959190) -- Google, 2016
 - [Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations](https://dl.acm.org/doi/10.1145/3298689.3346996) -- Google, 2019
@@ -96,7 +94,7 @@ Popurality bias in recommendations is a long-standing issue. Fresh items have no
 
 ## Generative Recommendations
 
-BERT4Rec and HSTU showed recommendation works as next-item prediction. TIGER proved you can tokenize items into semantic IDs via hierarchical clustering and generate recommendations autoregressively. OneRec replaced an entire multi-stage pipeline with one generative model, achieving better app stay time with dramatically lower system complexity. A recent Google paper argues the real win is the clustering, not the autoregressive generation. Full softmax over item clusters gets equivalent results 10x faster. Either way, most big-tech recsys teams are investing heavily here.
+BERT4Rec and HSTU showed recommendation works as next-item prediction. TIGER proved you can tokenize items into semantic IDs via hierarchical clustering and generate recommendations autoregressively. OneRec replaced an entire multi-stage pipeline with one generative model, achieving better app stay time with dramatically lower system complexity. A recent Google paper argues the real win is the clustering, not the autoregressive generation. Full softmax over item clusters gets equivalent results 10x faster.
 
 - [BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer](https://arxiv.org/abs/1904.06690) -- Alibaba, 2019
 - [Effective and Efficient Training for Sequential Recommendation using Recency Sampling](https://arxiv.org/abs/2207.02643) -- University of Glasgow, 2022
