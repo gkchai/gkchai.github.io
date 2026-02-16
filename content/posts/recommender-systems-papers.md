@@ -15,7 +15,7 @@ My reading list for recommender systems, organized by the areas that matter most
 
 ## Value Modeling & Calibration
 
-The utility function that combines action probabilities into a single ranking score is the conduit between the ML model and the product. In most cases, the actions are determined by the product definition, e.g. like, watch duration, dwell time, share, purchase. There are also actions that are outside the immediate user session and significantly impact long-term behaviior, e.g. number of play days over the next 7 days, repeat purchases. Calibration becomes important when we want to associate monetary value to predictions, for instance, in ads ranking, or when the ranking score is a weighted sum of probabilities across heterogeneous models or actions.
+The utility function that combines action probabilities into a single ranking score is the conduit between the ML model and the product. In most cases, the actions are determined by the product definition, e.g. like, watch duration, dwell time, share, purchase. There are also actions that are outside the immediate user session and significantly impact long-term behavior, e.g. number of play days over the next 7 days, repeat purchases. Calibration becomes important when we want to associate monetary value to predictions, for instance, in ads ranking, or when the ranking score is a weighted sum of probabilities across heterogeneous models or actions.
 
 - [Learned Ranking Function: From Short-term Behavior Predictions to Long-term User Satisfaction](https://arxiv.org/abs/2408.06512) -- Google/YouTube, 2024
 - [Ranking with Long-Term Constraints](https://arxiv.org/abs/2307.04923) -- Google, 2023
