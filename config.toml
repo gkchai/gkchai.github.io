@@ -27,13 +27,13 @@ date_format="%d %b, %Y"
 webserver_sends_csp_headers=true
 
 [[extra.main_menu]]
-name = "Quotes"
-url = "@/quotes.md"
+name = "Posts"
+url = "@/posts/_index.md"
 
 [[extra.main_menu]]
 name = "Books"
 url = "@/books.md"
 
 [[extra.main_menu]]
-name = "Posts"
-url = "@/posts/_index.md"
+name = "Quotes"
+url = "@/quotes.md"
