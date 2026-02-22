@@ -25,6 +25,7 @@ theme = "one-dark-pro"
 [extra]
 date_format="%d %b, %Y"
 webserver_sends_csp_headers=true
+google_analytics_id="G-NY7GP3VM2V"
 
 [[extra.main_menu]]
 name = "Posts"
