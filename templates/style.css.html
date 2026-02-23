@@ -94,6 +94,16 @@
     flex-shrink: 0;
   }
 
+  .home-profile {
+    width: 170px;
+    flex-shrink: 0;
+  }
+
+  .home-profile .social-links {
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+
   .home-content {
     flex: 1;
     min-width: 0;
@@ -258,8 +268,17 @@
   }
 
   .social-icon {
+    display: inline-flex;
+    align-items: center;
     color: var(--muted);
     text-decoration: none;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: currentColor;
   }
 
   .social-icon:hover {
@@ -324,6 +343,10 @@
     .home-photo {
       width: 220px;
       height: 220px;
+    }
+
+    .home-profile {
+      width: 220px;
     }
 
     ul.blog-posts li {
