@@ -11,13 +11,35 @@ tags = ["machine-learning", "recommender-systems"]
 
 ---
 
-Two-Tower (TT) models are used in retrieval because they can efficiently score thousands of candidates with embedding search. Since it is impractical to compute softmax over all user and item pairs, a standard TT model uses a sampled softmax loss with in-batch negatives. Additionally, logQ correction is applied to prevent negative bias towards popular items that are more likely to be treated as negatives [1].
+Two-Tower (TT) models are used in retrieval because they can efficiently score thousands of candidates with embedding search. Since it is impractical to compute softmax over all user and item pairs, a common TT setup uses a sampled softmax loss with in-batch negatives. Additionally, logQ correction is applied to prevent negative bias towards popular items that are more likely to be treated as negatives [1].
 
 *Self-supervised Loss* 
 
 As proposed in [2], learning better self-supervised item representations helps retrieval performance, especially on examples where labels are sparse. An auxiliary contrastive loss term is added, derived from multiple views of item embeddings generated with masking and augmentation of item features:
 
 `Total loss = L_main + α * L_SSL`
+
+where `L_SSL` is the self-supervised loss obtained as follows: 
+
+```python
+
+class SSLLoss(nn.Module): 
+    """Based on contrastive infoNCE loss"""
+    def __init__(self, temperature: float = 1.0): 
+        super().__init__()
+        self.temperature = temperature
+    
+    def forward(self, emb1: torch.Tensor, emb2: torch.Tensor):
+         batch_size = emb1.shape[0]
+         combined = F.normalize(torch.cat([emb1, emb2], dim=0), dim=1)  # [2B, D]
+         combined_batch_size = combined.shape[0]  # 2B
+         logits = combined @ combined.T / self.temperature
+         mask = torch.eye(combined_batch_size, device=logits.device, dtype=torch.bool)
+         logits = logits.masked_fill(mask, -1e9)  # remove self-pairs
+         # Positive pair mapping: i < B -> i+B, i >= B -> i-B
+         targets = (torch.arange(combined_batch_size, device=logits.device) + batch_size) % combined_batch_size
+         return F.cross_entropy(logits, targets)
+```
 
 Increasingly, TT models are being treated as early-stage rankers and loss functions that are applied to late-stage heavy rankers are being used to improve generalization of two-tower retrieval. 
 
