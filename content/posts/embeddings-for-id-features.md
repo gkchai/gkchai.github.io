@@ -11,7 +11,12 @@ tags = ["machine-learning", "recommender-systems"]
 
 ---
 
-ID features (`user_id`, `item_id`, `author_id`) are high-cardinality categorical signals. Rather than one-hot vectors, which scale poorly and cannot capture similarity between IDs, embeddings offer a representation that is both efficient and expressive. The embedding mapping can be done with a fixed vocab with a fixed set of out-of-vocab (OOV) embeddings, or through collision-prone hashing.
+ID features (`user_id`, `item_id`, `author_id`) are high-cardinality categorical signals. Instead of one-hot vectors, which scale poorly and cannot capture similarity between IDs, embeddings are both efficient and expressive. The embedding mapping can be done with a fixed vocab with a out-of-vocab (OOV) embeddings, or through random hashing.
+
+
+![VocabEmbed and HashEmbed lookup diagram](/images/vocabembed-vs-hashembed-diagram.svg)
+
+![VocabEmbed and HashEmbed lookup diagram](/images/vocabembed-vs-hashembed-diagram.svg)
 
 ```python
 class VocabEmbed(nn.Module):
