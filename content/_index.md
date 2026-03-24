@@ -5,7 +5,7 @@
 <div class="home-container">
 
 <div class="home-profile">
-<img src="/images/profile.jpg" alt="Photo of Krishna C. Garikipati" class="home-photo">
+<img src="/images/profile-main.png" alt="Photo of Krishna C. Garikipati" class="home-photo">
 <div class="social-links">
   <a href="https://github.com/gkchai/" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub" class="social-icon">
     <svg viewBox="0 0 24 24" aria-hidden="true">

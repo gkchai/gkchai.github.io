@@ -16,6 +16,8 @@ ID features (`user_id`, `item_id`, `author_id`) are high-cardinality categorical
 
 ![VocabEmbed and HashEmbed lookup diagram](/images/vocabembed-vs-hashembed-diagram.svg)
 
+![VocabEmbed and HashEmbed lookup diagram](/images/vocabembed-vs-hashembed-diagram.svg)
+
 ```python
 class VocabEmbed(nn.Module):
     def __init__(self, vocab: List[int], dim: int):
