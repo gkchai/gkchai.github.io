@@ -1,8 +1,8 @@
 +++
-title = "Sequence Features for Recommenders"
+title = "Learning from Sequence Features"
 date = "2025-11-08"
 type = "post"
-description = "How to represent variable-length interaction histories as sequence embeddings."
+description = "How to represent variable-length interaction histories."
 in_search_index = true
 [taxonomies]
 tags = ["machine-learning", "recommender-systems"]
@@ -29,4 +29,4 @@ class WeightedPooling(nn.Module):
 ```
 
 
-*Practical notes:* cap max sequence length (for example 50/100), keep padding index fixed, and store sequence preprocessing logic consistently between training and serving.
+*Practical notes:* use seq_len around 90th percentile of observed sequence lengths from training data
