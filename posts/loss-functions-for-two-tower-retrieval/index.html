@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loss Functions for Two-Tower Retrieval | Krishna C. Garikipati</title>
+  <meta name="title" content="Loss Functions for Two-Tower Retrieval">
+<meta name="description" content="ML and other stuff." />
+
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <style>  :root {
+    --bg: #ffffff;
+    --text: #000000;
+    --muted: #4d4d4d;
+    --border: #dddddd;
+    --link: #000000;
+    --link-visited: #000000;
+    --code-bg: #f5f5f5;
+
+    --sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji";
+    --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  html {
+    background: var(--bg);
+  }
+
+  body {
+    font-family: var(--sans);
+    margin: 0 auto;
+    padding: 36px 20px 40px;
+    max-width: 760px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.62;
+    font-size: 1.05rem;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.1rem;
+  }
+
+  header .title {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  header h2 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .site-nav {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.95rem;
+    font-size: 0.98rem;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .site-nav a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .site-nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  main,
+  article {
+    line-height: 1.75;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.15rem;
+    margin-top: 0.2rem;
+  }
+
+  .home-photo {
+    width: 170px;
+    height: 240px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .home-profile {
+    width: 170px;
+    flex-shrink: 0;
+  }
+
+  .home-profile .social-links {
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+
+  .home-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 2.05rem 0 0.72rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    margin-top: 0.4rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  p,
+  ul,
+  ol {
+    margin: 1rem 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25rem;
+  }
+
+  li {
+    margin: 0.35rem 0;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  a:visited {
+    color: var(--link-visited);
+  }
+
+  a:hover {
+    text-decoration-thickness: 1.5px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.92em;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.1em 0.35em;
+  }
+
+  pre {
+    overflow-x: auto;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.85rem;
+    margin: 1.25rem 0;
+  }
+
+  pre code {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    display: block;
+    white-space: pre;
+    font-size: 0.9em;
+  }
+
+  div.highlight pre {
+    background-color: transparent;
+    color: initial;
+    border: 0;
+    padding: 0;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    margin: 1.25rem 0;
+    padding: 0.15rem 0 0.15rem 0.9rem;
+    border-left: 2px solid var(--border);
+    color: var(--muted);
+  }
+
+  blockquote p {
+    margin: 0.75rem 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    font-size: 0.98em;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.45rem 0.3rem;
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 600;
+  }
+
+  textarea,
+  input {
+    font-family: var(--sans);
+    font-size: 1rem;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  footer {
+    margin-top: 2rem;
+    padding: 1rem 0 0.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: currentColor;
+  }
+
+  .social-icon:hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .helptext {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .errorlist {
+    color: #b45309;
+    font-size: 0.95rem;
+  }
+
+  /* blog posts list */
+  ul.blog-posts {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+  }
+
+  ul.blog-posts li {
+    display: grid;
+    grid-template-columns: 7.2rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+    padding: 0.24rem 0;
+  }
+
+  ul.blog-posts li span {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 560px) {
+    body {
+      padding: 22px 16px;
+      font-size: 17px;
+    }
+
+    .site-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+      text-align: left;
+      margin-top: 0.2rem;
+      gap: 0.75rem;
+    }
+
+    .home-container {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .home-photo {
+      width: 220px;
+      height: 300px;
+    }
+
+    .home-profile {
+      width: 220px;
+    }
+
+    ul.blog-posts li {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+  }
+
+  /* No dark mode — always light, matching jasonwei.net */
+
+  /* Giallo syntax highlighting (required by Zola 0.22+) */
+  .giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+  }
+  .giallo-ln {
+    display: inline-block;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
+  }
+</style>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NY7GP3VM2V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NY7GP3VM2V');
+</script>
+
+</head>
+<body>
+  <header class="site-header">
+  <a href="https:&#x2F;&#x2F;gkchai.github.io" class="title">
+    <h2>Krishna C. Garikipati</h2>
+  </a>
+  <nav class="site-nav">
+    <a href="https:&#x2F;&#x2F;gkchai.github.io">Home</a>
+      <a href="https://gkchai.github.io/posts/">Posts</a>
+      <a href="https://gkchai.github.io/papers/">Papers</a>
+      <a href="https://gkchai.github.io/books/">Books</a>
+      <a href="https://gkchai.github.io/quotes/">Quotes</a>
+  </nav>
+</header>
+
+    <h1>Loss Functions for Two-Tower Retrieval</h1>
+      <p>
+        <i>
+          <time datetime='2025-06-10T00:00:00+00:00' pubdate>10 Jun, 2025</time>
+        </i>
+      </p>
+  <main>
+    <hr />
+<p>Two-Tower (TT) models are used in retrieval because they can efficiently score thousands of candidates with embedding search. Since it is impractical to compute softmax over all user and item pairs, a common TT setup uses a sampled softmax loss with in-batch negatives. Additionally, logQ correction is applied to prevent negative bias towards popular items that are more likely to be treated as negatives [1].</p>
+<p><em>Self-supervised Loss</em> </p>
+<p>As proposed in [2], learning better self-supervised item representations helps retrieval performance, especially on examples where labels are sparse. An auxiliary contrastive loss term is added, derived from multiple views of item embeddings generated with masking and augmentation of item features:</p>
+<p><code>Total loss = L_main + α * L_SSL</code></p>
+<p>where <code>L_SSL</code> is the self-supervised loss obtained as follows:</p>
+<pre class="giallo" style="color: #ABB2BF; background-color: #282C34;"><code data-lang="python"><span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #C678DD;">class</span><span style="color: #E5C07B;"> SSLLoss</span><span>(</span><span style="color: #E5C07B;">nn</span><span>.</span><span style="color: #E5C07B;">Module</span><span>): </span></span>
+<span class="giallo-l"><span style="color: #98C379;">    &quot;&quot;&quot;Based on contrastive infoNCE loss&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #C678DD;">    def</span><span style="color: #56B6C2;"> __init__</span><span>(</span><span style="color: #E5C07B;font-style: italic;">self</span><span>,</span><span style="color: #D19A66;font-style: italic;"> temperature</span><span>:</span><span style="color: #56B6C2;"> float =</span><span style="color: #D19A66;"> 1.0</span><span>): </span></span>
+<span class="giallo-l"><span style="color: #56B6C2;">        super</span><span>().</span><span style="color: #56B6C2;">__init__</span><span>()</span></span>
+<span class="giallo-l"><span style="color: #E5C07B;">        self</span><span>.temperature</span><span style="color: #56B6C2;"> =</span><span> temperature</span></span>
+<span class="giallo-l"><span>    </span></span>
+<span class="giallo-l"><span style="color: #C678DD;">    def</span><span style="color: #61AFEF;"> forward</span><span>(</span><span style="color: #E5C07B;font-style: italic;">self</span><span>,</span><span style="color: #D19A66;font-style: italic;"> emb1</span><span>: torch.Tensor,</span><span style="color: #D19A66;font-style: italic;"> emb2</span><span>: torch.Tensor):</span></span>
+<span class="giallo-l"><span>         batch_size</span><span style="color: #56B6C2;"> =</span><span> emb1.shape[</span><span style="color: #D19A66;">0</span><span>]</span></span>
+<span class="giallo-l"><span>         combined</span><span style="color: #56B6C2;"> =</span><span> F.</span><span style="color: #61AFEF;">normalize</span><span>(torch.</span><span style="color: #61AFEF;">cat</span><span>([emb1, emb2],</span><span style="color: #E06C75;font-style: italic;"> dim</span><span style="color: #56B6C2;">=</span><span style="color: #D19A66;">0</span><span>),</span><span style="color: #E06C75;font-style: italic;"> dim</span><span style="color: #56B6C2;">=</span><span style="color: #D19A66;">1</span><span>)</span><span style="color: #7F848E;font-style: italic;">  # [2B, D]</span></span>
+<span class="giallo-l"><span>         combined_batch_size</span><span style="color: #56B6C2;"> =</span><span> combined.shape[</span><span style="color: #D19A66;">0</span><span>]</span><span style="color: #7F848E;font-style: italic;">  # 2B</span></span>
+<span class="giallo-l"><span>         logits</span><span style="color: #56B6C2;"> =</span><span> combined</span><span style="color: #56B6C2;"> @</span><span> combined.T</span><span style="color: #56B6C2;"> /</span><span style="color: #E5C07B;"> self</span><span>.temperature</span></span>
+<span class="giallo-l"><span>         mask</span><span style="color: #56B6C2;"> =</span><span> torch.</span><span style="color: #61AFEF;">eye</span><span>(combined_batch_size,</span><span style="color: #E06C75;font-style: italic;"> device</span><span style="color: #56B6C2;">=</span><span>logits.device,</span><span style="color: #E06C75;font-style: italic;"> dtype</span><span style="color: #56B6C2;">=</span><span>torch.bool)</span></span>
+<span class="giallo-l"><span>         logits</span><span style="color: #56B6C2;"> =</span><span> logits.</span><span style="color: #61AFEF;">masked_fill</span><span>(mask,</span><span style="color: #56B6C2;"> -</span><span style="color: #D19A66;">1e9</span><span>)</span><span style="color: #7F848E;font-style: italic;">  # remove self-pairs</span></span>
+<span class="giallo-l"><span style="color: #7F848E;font-style: italic;">         # Positive pair mapping: i &lt; B -&gt; i+B, i &gt;= B -&gt; i-B</span></span>
+<span class="giallo-l"><span>         targets</span><span style="color: #56B6C2;"> =</span><span> (torch.</span><span style="color: #61AFEF;">arange</span><span>(combined_batch_size,</span><span style="color: #E06C75;font-style: italic;"> device</span><span style="color: #56B6C2;">=</span><span>logits.device)</span><span style="color: #56B6C2;"> +</span><span> batch_size)</span><span style="color: #56B6C2;"> %</span><span> combined_batch_size</span></span>
+<span class="giallo-l"><span style="color: #C678DD;">         return</span><span> F.</span><span style="color: #61AFEF;">cross_entropy</span><span>(logits, targets)</span></span></code></pre>
+<p>Increasingly, TT models are being treated as early-stage rankers and loss functions that are applied to late-stage heavy rankers are being used to improve generalization of two-tower retrieval. </p>
+<p><em>Pairwise Loss</em></p>
+<p>Often used to improve pairwise relevance of ranked results, this can be applied to TT loss by comparing scores of positive and negative examples as described in [3]:</p>
+<p><code>Total loss = L_main + β * max(0, m - (s(u, i+) - s(u, i-)))</code></p>
+<p>It is preferred to use hard negatives rather than in-batch negatives.</p>
+<p><em>Distillation Loss</em></p>
+<p>In addition to known binary labels from user feedback, prediction scores from late-stage ranker can serve as soft labels and the KL divergence between the TT predictions (q) and ranker predictions (p) can be treated as a loss function for training [4].  This can help the TT candidates align with the reranker, and more strongly drive topline metrics with TT modeling improvements.</p>
+<p><code>Total loss = L_main + β * DKL(p||q)</code></p>
+<p><em>Practical notes:</em> Start with sampled softmax (baseline), add self-supervised loss, improve negatives (mixed negative sampling), add pairwise margin loss, add distillation loss last.</p>
+<p>[1] <a rel="external" href="https://storage.googleapis.com/gweb-research2023-media/pubtools/5716.pdf">Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations</a>, 2019</p>
+<p>[2] <a rel="external" href="https://arxiv.org/abs/2007.12865">Self-supervised Learning for Large-scale Item Recommendations</a>, Google 2020</p>
+<p>[3] <a rel="external" href="https://arxiv.org/abs/2602.07309">Semantic Search At LinkedIn</a>, 2026</p>
+<p>[4] <a rel="external" href="https://medium.com/pinterest-engineering/gpu-serving-two-tower-models-for-lightweight-ads-engagement-prediction-5a0ffb442f3b">GPU-Serving Two-Tower Models for Lightweight Ads Engagement Prediction</a>, Pinterest 2026</p>
+
+  </main>
+  <p>
+        Tags:
+          <a href="https://gkchai.github.io/tags/machine-learning/">#machine-learning</a>
+          <a href="https://gkchai.github.io/tags/recommender-systems/">#recommender-systems</a>
+  </p>
+<footer>
+    © 2026 Krishna C. Garikipati
+</footer>
+</body>
+</html>

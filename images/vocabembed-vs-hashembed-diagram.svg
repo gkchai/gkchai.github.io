@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">VocabEmbed vs HashEmbed Illustration</title>
+  <desc id="desc">Infographic-style illustration comparing vocab-based embedding lookup and hash-based embedding lookup.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fbff" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+    <style>
+      .t1 { font: 700 42px Arial, sans-serif; fill: #0f172a; }
+      .t2 { font: 600 24px Arial, sans-serif; fill: #1e293b; }
+      .t3 { font: 500 18px Arial, sans-serif; fill: #334155; }
+      .t4 { font: 600 16px Arial, sans-serif; fill: #111827; }
+      .ok { font: 600 16px Arial, sans-serif; fill: #0f766e; }
+      .warn { font: 600 16px Arial, sans-serif; fill: #b91c1c; }
+      .chip { font: 600 14px Arial, sans-serif; fill: #111827; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bg)" />
+  <text x="700" y="66" text-anchor="middle" class="t1">VocabEmbed vs HashEmbed</text>
+  <text x="700" y="98" text-anchor="middle" class="t3">Two ways to map sparse IDs into dense vectors</text>
+
+  <rect x="52" y="132" width="620" height="520" rx="22" fill="#eff6ff" stroke="#60a5fa" stroke-width="2.5" />
+  <rect x="728" y="132" width="620" height="520" rx="22" fill="#fff7ed" stroke="#fb923c" stroke-width="2.5" />
+
+  <text x="362" y="176" text-anchor="middle" class="t2">VocabEmbed</text>
+  <text x="1038" y="176" text-anchor="middle" class="t2">HashEmbed</text>
+
+  <g transform="translate(110,220)">
+    <rect x="0" y="0" width="170" height="140" rx="14" fill="#ffffff" stroke="#93c5fd" stroke-width="2" />
+    <text x="85" y="28" text-anchor="middle" class="t4">Input IDs</text>
+    <circle cx="34" cy="58" r="10" fill="#3b82f6" />
+    <text x="56" y="64" class="chip">user_42</text>
+    <circle cx="34" cy="88" r="10" fill="#3b82f6" />
+    <text x="56" y="94" class="chip">item_888</text>
+    <circle cx="34" cy="118" r="10" fill="#3b82f6" />
+    <text x="56" y="124" class="chip">author_7</text>
+  </g>
+
+  <g transform="translate(325,220)">
+    <rect x="0" y="0" width="170" height="220" rx="14" fill="#ffffff" stroke="#93c5fd" stroke-width="2" />
+    <text x="85" y="28" text-anchor="middle" class="t4">Vocab Table</text>
+    <rect x="20" y="44" width="130" height="24" rx="7" fill="#dbeafe" />
+    <text x="85" y="61" text-anchor="middle" class="chip">author_7 -> 10</text>
+    <rect x="20" y="76" width="130" height="24" rx="7" fill="#dbeafe" />
+    <text x="85" y="93" text-anchor="middle" class="chip">item_888 -> 251</text>
+    <rect x="20" y="108" width="130" height="24" rx="7" fill="#dbeafe" />
+    <text x="85" y="125" text-anchor="middle" class="chip">user_42 -> 903</text>
+    <rect x="20" y="152" width="130" height="48" rx="8" fill="#f8fafc" stroke="#cbd5e1" />
+    <text x="85" y="180" text-anchor="middle" class="t3">searchsorted</text>
+  </g>
+
+  <g transform="translate(540,220)">
+    <rect x="0" y="0" width="90" height="220" rx="14" fill="#ffffff" stroke="#93c5fd" stroke-width="2" />
+    <text x="45" y="28" text-anchor="middle" class="t4">Index</text>
+    <rect x="20" y="52" width="50" height="28" rx="7" fill="#e0f2fe" />
+    <text x="45" y="71" text-anchor="middle" class="chip">10</text>
+    <rect x="20" y="90" width="50" height="28" rx="7" fill="#e0f2fe" />
+    <text x="45" y="109" text-anchor="middle" class="chip">251</text>
+    <rect x="20" y="128" width="50" height="28" rx="7" fill="#e0f2fe" />
+    <text x="45" y="147" text-anchor="middle" class="chip">903</text>
+    <rect x="20" y="168" width="50" height="28" rx="7" fill="#fee2e2" />
+    <text x="45" y="187" text-anchor="middle" class="chip">OOV</text>
+  </g>
+
+  <g transform="translate(170,475)">
+    <rect x="0" y="0" width="460" height="130" rx="14" fill="#ffffff" stroke="#93c5fd" stroke-width="2" />
+    <text x="230" y="30" text-anchor="middle" class="t4">Embedding Matrix (vocab rows)</text>
+    <rect x="36" y="48" width="70" height="60" rx="8" fill="#dbeafe" />
+    <rect x="118" y="48" width="70" height="60" rx="8" fill="#bfdbfe" />
+    <rect x="200" y="48" width="70" height="60" rx="8" fill="#93c5fd" />
+    <rect x="282" y="48" width="70" height="60" rx="8" fill="#bfdbfe" />
+    <rect x="364" y="48" width="60" height="60" rx="8" fill="#dbeafe" />
+    <text x="230" y="123" text-anchor="middle" class="ok">Precise ID-to-row mapping</text>
+  </g>
+
+  <g transform="translate(785,220)">
+    <rect x="0" y="0" width="190" height="140" rx="14" fill="#ffffff" stroke="#fdba74" stroke-width="2" />
+    <text x="95" y="28" text-anchor="middle" class="t4">Input IDs</text>
+    <circle cx="34" cy="58" r="10" fill="#f97316" />
+    <text x="56" y="64" class="chip">user_42</text>
+    <circle cx="34" cy="88" r="10" fill="#f97316" />
+    <text x="56" y="94" class="chip">item_888</text>
+    <circle cx="34" cy="118" r="10" fill="#f97316" />
+    <text x="56" y="124" class="chip">author_7</text>
+  </g>
+
+  <g transform="translate(1020,220)">
+    <rect x="0" y="0" width="260" height="140" rx="14" fill="#ffffff" stroke="#fdba74" stroke-width="2" />
+    <text x="130" y="30" text-anchor="middle" class="t4">Hashing</text>
+    <rect x="26" y="48" width="208" height="34" rx="8" fill="#ffedd5" />
+    <text x="130" y="71" text-anchor="middle" class="chip">id % num_buckets</text>
+    <rect x="26" y="90" width="208" height="34" rx="8" fill="#ffedd5" />
+    <text x="130" y="113" text-anchor="middle" class="chip">42 -> 10, 888 -> 10, 7 -> 7</text>
+  </g>
+
+  <g transform="translate(810,475)">
+    <rect x="0" y="0" width="500" height="130" rx="14" fill="#ffffff" stroke="#fdba74" stroke-width="2" />
+    <text x="250" y="30" text-anchor="middle" class="t4">Embedding Matrix (bucket rows)</text>
+    <rect x="34" y="48" width="70" height="60" rx="8" fill="#ffedd5" />
+    <rect x="116" y="48" width="70" height="60" rx="8" fill="#fed7aa" />
+    <rect x="198" y="48" width="70" height="60" rx="8" fill="#fdba74" />
+    <rect x="280" y="48" width="70" height="60" rx="8" fill="#fed7aa" />
+    <rect x="362" y="48" width="70" height="60" rx="8" fill="#ffedd5" />
+    <rect x="444" y="48" width="32" height="60" rx="8" fill="#fdba74" />
+    <text x="250" y="123" text-anchor="middle" class="warn">Different IDs can share a bucket (collision)</text>
+  </g>
+
+  <path d="M280 290 C305 290, 325 290, 325 290" stroke="#3b82f6" stroke-width="3" fill="none" />
+  <polygon points="325,290 313,284 313,296" fill="#3b82f6" />
+  <path d="M495 320 C520 320, 540 320, 540 320" stroke="#3b82f6" stroke-width="3" fill="none" />
+  <polygon points="540,320 528,314 528,326" fill="#3b82f6" />
+  <path d="M585 440 C585 462, 510 470, 460 475" stroke="#3b82f6" stroke-width="3" fill="none" />
+  <polygon points="460,475 470,466 472,478" fill="#3b82f6" />
+
+  <path d="M975 290 C998 290, 1020 290, 1020 290" stroke="#f97316" stroke-width="3" fill="none" />
+  <polygon points="1020,290 1008,284 1008,296" fill="#f97316" />
+  <path d="M1150 360 C1150 430, 1110 450, 1060 475" stroke="#f97316" stroke-width="3" fill="none" />
+  <polygon points="1060,475 1069,466 1072,478" fill="#f97316" />
+
+  <circle cx="1208" cy="402" r="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2" />
+  <text x="1208" y="408" text-anchor="middle" class="warn">!</text>
+  <text x="1230" y="408" class="warn">collision risk</text>
+
+  <text x="700" y="705" text-anchor="middle" class="t3">
+    VocabEmbed gives exact lookups but needs a managed vocabulary. HashEmbed scales easily but accepts collisions.
+  </text>
+</svg>

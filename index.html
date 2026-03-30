@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna C. Garikipati</title>
+  <meta name="title" content="Krishna C. Garikipati">
+<meta name="description" content="ML and other stuff." />
+
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <style>  :root {
+    --bg: #ffffff;
+    --text: #000000;
+    --muted: #4d4d4d;
+    --border: #dddddd;
+    --link: #000000;
+    --link-visited: #000000;
+    --code-bg: #f5f5f5;
+
+    --sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji";
+    --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  html {
+    background: var(--bg);
+  }
+
+  body {
+    font-family: var(--sans);
+    margin: 0 auto;
+    padding: 36px 20px 40px;
+    max-width: 760px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.62;
+    font-size: 1.05rem;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.1rem;
+  }
+
+  header .title {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  header h2 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .site-nav {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.95rem;
+    font-size: 0.98rem;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .site-nav a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .site-nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  main,
+  article {
+    line-height: 1.75;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.15rem;
+    margin-top: 0.2rem;
+  }
+
+  .home-photo {
+    width: 170px;
+    height: 240px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .home-profile {
+    width: 170px;
+    flex-shrink: 0;
+  }
+
+  .home-profile .social-links {
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+
+  .home-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 2.05rem 0 0.72rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    margin-top: 0.4rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  p,
+  ul,
+  ol {
+    margin: 1rem 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25rem;
+  }
+
+  li {
+    margin: 0.35rem 0;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  a:visited {
+    color: var(--link-visited);
+  }
+
+  a:hover {
+    text-decoration-thickness: 1.5px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.92em;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.1em 0.35em;
+  }
+
+  pre {
+    overflow-x: auto;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.85rem;
+    margin: 1.25rem 0;
+  }
+
+  pre code {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    display: block;
+    white-space: pre;
+    font-size: 0.9em;
+  }
+
+  div.highlight pre {
+    background-color: transparent;
+    color: initial;
+    border: 0;
+    padding: 0;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    margin: 1.25rem 0;
+    padding: 0.15rem 0 0.15rem 0.9rem;
+    border-left: 2px solid var(--border);
+    color: var(--muted);
+  }
+
+  blockquote p {
+    margin: 0.75rem 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    font-size: 0.98em;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.45rem 0.3rem;
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 600;
+  }
+
+  textarea,
+  input {
+    font-family: var(--sans);
+    font-size: 1rem;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  footer {
+    margin-top: 2rem;
+    padding: 1rem 0 0.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: currentColor;
+  }
+
+  .social-icon:hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .helptext {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .errorlist {
+    color: #b45309;
+    font-size: 0.95rem;
+  }
+
+  /* blog posts list */
+  ul.blog-posts {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+  }
+
+  ul.blog-posts li {
+    display: grid;
+    grid-template-columns: 7.2rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+    padding: 0.24rem 0;
+  }
+
+  ul.blog-posts li span {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 560px) {
+    body {
+      padding: 22px 16px;
+      font-size: 17px;
+    }
+
+    .site-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+      text-align: left;
+      margin-top: 0.2rem;
+      gap: 0.75rem;
+    }
+
+    .home-container {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .home-photo {
+      width: 220px;
+      height: 300px;
+    }
+
+    .home-profile {
+      width: 220px;
+    }
+
+    ul.blog-posts li {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+  }
+
+  /* No dark mode — always light, matching jasonwei.net */
+
+  /* Giallo syntax highlighting (required by Zola 0.22+) */
+  .giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+  }
+  .giallo-ln {
+    display: inline-block;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
+  }
+</style>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NY7GP3VM2V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NY7GP3VM2V');
+</script>
+
+</head>
+<body>
+  <header class="site-header">
+  <a href="https:&#x2F;&#x2F;gkchai.github.io" class="title">
+    <h2>Krishna C. Garikipati</h2>
+  </a>
+  <nav class="site-nav">
+    <a href="https:&#x2F;&#x2F;gkchai.github.io">Home</a>
+      <a href="https://gkchai.github.io/posts/">Posts</a>
+      <a href="https://gkchai.github.io/papers/">Papers</a>
+      <a href="https://gkchai.github.io/books/">Books</a>
+      <a href="https://gkchai.github.io/quotes/">Quotes</a>
+  </nav>
+</header>
+
+  <main>
+    <div class="home-container">
+<div class="home-profile">
+<img src="/images/profile-main.png" alt="Photo of Krishna C. Garikipati" class="home-photo">
+<div class="social-links">
+  <a href="https://github.com/gkchai/" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub" class="social-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 .5C5.65.5.5 5.7.5 12.1c0 5.1 3.3 9.5 7.9 11.1.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.8 1.4 3.5 1.1.1-.8.4-1.4.8-1.7-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4 1 0 2 .1 2.9.4 2.2-1.5 3.2-1.2 3.2-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.6 7.9-6 7.9-11.1C23.5 5.7 18.3.5 12 .5z"/>
+    </svg>
+  </a>
+  <a href="https://x.com/g_k_chai" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Twitter / X" class="social-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18.9 2.2h3.5l-7.7 8.8 9 10.8h-7L11.2 15l-5.9 6.8H1.8l8.2-9.4L1.3 2.2h7.1l5 6.2 5.5-6.2zm-1.2 17.6h2l-11-14h-2l11 14z"/>
+    </svg>
+  </a>
+  <a href="https://www.linkedin.com/in/krishna-c-garikipati-0189b713" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn" class="social-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-1 1.9-2.1 3.9-2.1 4.2 0 5 2.8 5 6.3V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V21h-4z"/>
+    </svg>
+  </a>
+</div>
+</div>
+<div class="home-content">
+<p>👋🏽 Hello. I’m Krishna. I write about ML, mostly recommender systems, and other stuff.</p>
+</div>
+</div>
+
+  </main>
+<footer>
+    © 2026 Krishna C. Garikipati
+</footer>
+</body>
+</html>
