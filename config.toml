@@ -32,6 +32,10 @@ name = "Posts"
 url = "@/posts/_index.md"
 
 [[extra.main_menu]]
+name = "Papers"
+url = "@/papers.md"
+
+[[extra.main_menu]]
 name = "Books"
 url = "@/books.md"
 
