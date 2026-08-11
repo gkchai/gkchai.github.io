@@ -1,7 +1,27 @@
 {% extends "base.html" %}
 
 {% block main %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Krishna (Kris) C. Garikipati",
+    "alternateName": "Krishna C. Garikipati",
+    "jobTitle": "Principal Machine Learning Engineer",
+    "knowsAbout": [
+      "Recommender Systems",
+      "Deep Learning Infrastructure",
+      "Marketplace Optimization"
+    ],
+    "url": "{{ config.base_url | safe }}",
+    "sameAs": [
+      "https://www.linkedin.com/in/krishna-c-garikipati-0189b713/",
+      "https://github.com/gkchai/"
+    ]
+  }
+  </script>
   <main>
+    <h1 class="visually-hidden">{{ config.title }}</h1>
     {{ section.content | safe }}
   </main>
 {% endblock %}
