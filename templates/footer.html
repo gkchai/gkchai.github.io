@@ -1,5 +1,5 @@
 <footer>
   {%- if not config.extra.hide_made_with_line %}
-    © 2026 Krishna C. Garikipati
+    © {{ now() | date(format="%Y") }} Krishna C. Garikipati
   {%- endif %}
 </footer>

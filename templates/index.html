@@ -2,6 +2,7 @@
 
 {% block main %}
   <main>
+    <h1 class="visually-hidden">{{ config.title }}</h1>
     {{ section.content | safe }}
   </main>
 {% endblock %}

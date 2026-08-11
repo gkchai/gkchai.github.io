@@ -45,12 +45,23 @@
     color: inherit;
   }
 
-  header h2 {
+  header .title {
     font-weight: 600;
     letter-spacing: -0.01em;
-    margin: 0;
-    font-size: 1.2rem;
     line-height: 1.3;
+    font-size: 1.2rem;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .site-nav {
@@ -71,6 +82,12 @@
   .site-nav a:hover {
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+
+  a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+    border-radius: 2px;
   }
 
   main,
